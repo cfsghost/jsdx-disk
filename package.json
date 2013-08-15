@@ -1,0 +1,31 @@
+{
+	"name": "jsdx-disk",
+	"version": "0.0.1",
+	"description": "Disk API on JSDX framework",
+	"keywords": [
+		"jsdx",
+		"system",
+		"disk"
+	],
+	"homepage": "https://github.com/cfsghost/jsdx-disk",
+	"author": {
+		"name": "Fred Chien(錢逢祥)",
+		"email": "cfsghost@gmail.com",
+		"web": "http://www.mandice.com/"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:cfsghost/jsdx-disk.git"
+	},
+	"directories": {
+		"tests": "tests"
+	},
+	"engines": {
+		"node": ">= 0.8.0"
+	},
+	"dependencies": {
+		"dbus": ">= 0.0.4"
+	},
+	"main": "./lib/jsdx_disk.js"
+}
