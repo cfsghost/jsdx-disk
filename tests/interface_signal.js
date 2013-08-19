@@ -6,13 +6,13 @@ var disk = new Disk();
 
 disk.init(function() {
 
-	disk.on('interfaces_added', function(objectPath, data) {
-		console.log('INTERFACE ADDED: ' + objectPath);
+	disk.on('interfaces_added', function(data) {
+		console.log('INTERFACE ADDED: ' + data.objectName);
 		console.log(data);
 	});
 
-	disk.on('interfaces_removed', function(objectPath, data) {
-		console.log('INTERFACE REMOVED: ' + objectPath);
+	disk.on('interfaces_removed', function(data) {
+		console.log('INTERFACE REMOVED: ' + data.objectName);
 		console.log(data);
 	});
 
