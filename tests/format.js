@@ -8,7 +8,7 @@ disk.init(function() {
 
 	var obj = disk.getStorageObject('Block', 'sdb1');
 
-	obj.format('ext4', function(err) {
+	obj.format('ext4', {}, function(err) {
 
 		if (err) {
 			console.log(err);
