@@ -10,7 +10,6 @@ disk.init(function() {
 
 	console.log('Getting size of disk');
 	obj.getProperties('Block', function(err, props) {
-		console.log(props);
 		var availSize = props.Size - 1048576;
 
 		console.log('Create Partition ...');
