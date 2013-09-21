@@ -25,7 +25,7 @@
 		"node": ">= 0.8.0"
 	},
 	"dependencies": {
-		"dbus": ">= 0.0.4",
+		"dbus": ">= 0.1.0",
 		"async": ">= 0.2.9"
 	},
 	"main": "./lib/jsdx_disk.js"
