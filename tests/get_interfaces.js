@@ -8,5 +8,7 @@ disk.init(function() {
 
 	var obj = disk.getStorageObject('Block', 'sdb');
 
-	console.log(obj.interfaces);
+	obj.listInterfaces(function(interfaces) {
+		console.log(interfaces);
+	});
 });
