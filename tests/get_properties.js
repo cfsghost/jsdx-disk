@@ -10,5 +10,6 @@ disk.init(function() {
 
 	obj.getProperties('Block', function(err, props) {
 		console.log(props);
+		process.exit();
 	});
 });
