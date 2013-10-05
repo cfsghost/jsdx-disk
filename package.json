@@ -1,6 +1,6 @@
 {
 	"name": "jsdx-disk",
-	"version": "0.0.4",
+	"version": "0.2.0",
 	"description": "Disk API on JSDX framework",
 	"keywords": [
 		"jsdx",
@@ -22,11 +22,11 @@
 		"tests": "tests"
 	},
 	"engines": {
-		"node": ">= 0.8.0"
+		"node": ">= 0.10.0"
 	},
 	"dependencies": {
 		"dbus": ">= 0.2.0",
 		"async": ">= 0.2.9"
 	},
-	"main": "./lib/jsdx_disk.js"
+	"main": "./lib/disk.js"
 }
