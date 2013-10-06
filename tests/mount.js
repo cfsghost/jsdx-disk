@@ -3,20 +3,14 @@
 var Disk = require('../');
 
 var disk = new Disk();
-
 disk.init(function() {
 
-	var obj = disk.getStorageObject('Block', 'sdb1');
+	disk.getBlockDevice('sdb', function(err, device) {
 
-	obj.mount(function(err, mountPath) {
-
-		if (err) {
-			console.log(err);
+		device.mount({}, function(err, mountPath) {
+			console.log(mountPath);
 			process.exit();
-			return;
-		}
-
-		console.log('It was mounted on ' + mountPath);
-		process.exit();
+		});
 	});
+
 });
