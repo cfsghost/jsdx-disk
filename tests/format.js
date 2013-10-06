@@ -6,7 +6,7 @@ var disk = new Disk();
 
 disk.init(function() {
 
-	disk.getBlockDevice('sdb', function(err, device) {
+	disk.getBlockDevice('sdb1', function(err, device) {
 
 		console.log('Formating ...');
 		device.format('ext4', function(err) {
