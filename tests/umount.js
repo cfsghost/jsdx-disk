@@ -3,13 +3,14 @@
 var Disk = require('../');
 
 var disk = new Disk();
-
 disk.init(function() {
 
-	var obj = disk.getStorageObject('Block', 'sdb1');
+	disk.getBlockDevice('sdb1', function(err, device) {
 
-	obj.unmount(function(err) {
-		console.log('Unmounted');
-		process.exit();
+		device.unmount({}, function(err) {
+			console.log('Unmounted');
+			process.exit();
+		});
 	});
+
 });

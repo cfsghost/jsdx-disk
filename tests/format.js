@@ -6,18 +6,19 @@ var disk = new Disk();
 
 disk.init(function() {
 
-	var obj = disk.getStorageObject('Block', 'sdb1');
+	disk.getBlockDevice('sdb1', function(err, device) {
 
-	console.log('Formating ...');
-	obj.format('ext4', function(err) {
+		console.log('Formating ...');
+		device.format('ext4', function(err) {
 
-		if (err) {
-			console.log(err);
+			if (err) {
+				console.log(err);
+				process.exit();
+				return;
+			}
+
+			console.log('Done');
 			process.exit();
-			return;
-		}
-
-		console.log('Done');
-		process.exit();
+		});
 	});
 });

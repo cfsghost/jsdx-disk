@@ -6,11 +6,12 @@ var disk = new Disk();
 
 disk.init(function() {
 
-	var obj = disk.getStorageObject('Block', 'sdb1');
+	disk.getBlockDevice('sdb1', function(err, device) {
 
-	console.log('Delete Partition ...');
-	obj.deletePartition(function() {
-		console.log('Done');
-		process.exit();
+		console.log('Delete Partition ...');
+		device.deletePartition(function() {
+			console.log('Done');
+			process.exit();
+		});
 	});
 });

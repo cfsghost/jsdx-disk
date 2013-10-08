@@ -6,19 +6,16 @@ var disk = new Disk();
 
 disk.init(function() {
 
-	var obj = disk.getStorageObject('Block', 'sdb');
+	disk.getBlockDevice('sdb', function(err, device) {
+		device.getSize(function(err, size) {
+			var availSize = size - 1048576;
+			console.log('Available size: ' + availSize);
 
-	console.log('Getting size of disk');
-	obj.getProperties('Block', function(err, props) {
-		var availSize = props.Size - 1048576;
-		console.log('Available size: ' + availSize);
-
-		console.log('Create Partition ...');
-		obj.createPartition(1048576, availSize, '0x83', null, {}, function() {
-			console.log('Done');
-			process.exit();
+			console.log('Create Partition ...');
+			device.createPartition(1048576, availSize, '0x83', null, {}, function() {
+				console.log('Done');
+				process.exit();
+			});
 		});
-
 	});
-
 });
