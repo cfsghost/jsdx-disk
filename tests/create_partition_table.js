@@ -9,7 +9,7 @@ disk.init(function() {
 	disk.getBlockDevice('sdb', function(err, device) {
 
 		console.log('Creating ...');
-		device.format('dos', function(err) {
+		device.createPartitionTable('dos', function(err) {
 
 			if (err) {
 				console.log(err);
