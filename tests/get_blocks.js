@@ -7,11 +7,10 @@ disk.init(function() {
 
 	disk.getDrives(function(err, drives) {
 
-		for (var objectPath in drives) {
-			drives[objectPath].getBlockDevices(function(err, devices) {
+		for (var index in drives) {
+			drives[index].getBlockDevices(function(err, devices) {
 
 				console.log(devices);
-				process.exit();
 			});
 		}
 
